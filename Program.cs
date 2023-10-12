@@ -106,23 +106,35 @@ do
     switch (menuSelection)
     {
         case "1":
+            // List all current pet information
+            Console.WriteLine("This app feature is coming soon - Please check back to see progress.");
             break;
         case "2":
+            Console.WriteLine("This app feature is coming soon - Please check back to see progress.");
             break;
         case "3":
+            Console.WriteLine("Challenge Project - Please check back soon to see progress.");
             break;
         case "4":
+            Console.WriteLine("Challenge Project - Please check back soon to see progress.");
             break;
         case "5":
+            Console.WriteLine("UNDER CONSTRUCTION - Please check back next month to see progress.");
             break;
         case "6":
+            Console.WriteLine("UNDER CONSTRUCTION - Please check back next month to see progress.");
             break;
         case "7":
+            Console.WriteLine("UNDER CONSTRUCTION - Please check back next month to see progress.");
             break;
         case "8":
+            Console.WriteLine("UNDER CONSTRUCTION - Please check back next month to see progress.");
             break;
         default:
             break;
     }
+
+    Console.WriteLine("Press the Enter key to continue");
+    readResult = Console.ReadLine();
 
 } while (menuSelection != "exit");
