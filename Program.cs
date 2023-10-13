@@ -192,7 +192,6 @@ do
                 } while (animalPhysicalDescription == "");
 
                 // Get a description of the pet's personality
-
                 do
                 {
                     Console.WriteLine("Enter a description of the pet's personality (likes or dislikes, tricks, energy level, etc.)");
@@ -208,6 +207,23 @@ do
                         animalPersonalityDescription = "tbd";
                     }
                 } while (animalPersonalityDescription == "");
+
+                // Retrieve the pet's nickname
+                do
+                {
+                    Console.WriteLine("Enter a nickname for the pet");
+                    readResult = Console.ReadLine();
+
+                    if (readResult != null)
+                    {
+                        animalNickname = readResult.ToLower();
+                    }
+
+                    if (animalNickname == "")
+                    {
+                        animalNickname = "tbd";
+                    }
+                } while (animalNickname == "");
 
                 // Checks to see if user would like to add more pets
                 if (petCount < maxPets)
