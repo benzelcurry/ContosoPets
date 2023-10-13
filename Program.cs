@@ -191,6 +191,24 @@ do
                     }
                 } while (animalPhysicalDescription == "");
 
+                // Get a description of the pet's personality
+
+                do
+                {
+                    Console.WriteLine("Enter a description of the pet's personality (likes or dislikes, tricks, energy level, etc.)");
+                    readResult = Console.ReadLine();
+
+                    if (readResult != null)
+                    {
+                        animalPersonalityDescription = readResult.ToLower();
+                    }
+
+                    if (animalPersonalityDescription == "")
+                    {
+                        animalPersonalityDescription = "tbd";
+                    }
+                } while (animalPersonalityDescription == "");
+
                 // Checks to see if user would like to add more pets
                 if (petCount < maxPets)
                 {
