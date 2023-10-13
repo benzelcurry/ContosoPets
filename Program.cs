@@ -122,7 +122,28 @@ do
 
             while (anotherPet == "y" && petCount < maxPets)
             {
+                bool validEntry = false;
                 petCount++;
+
+                do
+                {
+                    Console.WriteLine("\n\rEntry 'dog' or 'cat' to begin a new entry");
+                    readResult = Console.ReadLine();
+
+                    if (readResult != null)
+                    {
+                        animalSpecies = readResult.ToLower();
+                    }
+
+                    if (animalSpecies != "dog" && animalSpecies != "cat")
+                    {
+                        validEntry = false;
+                    }
+                    else
+                    {
+                        validEntry = true;
+                    }
+                } while (validEntry == false);
 
                 if (petCount < maxPets)
                 {
