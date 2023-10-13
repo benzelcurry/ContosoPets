@@ -115,19 +115,22 @@ do
                 }
             }
 
+            // Displays remaining spaces for new pets
             if (petCount < maxPets)
             {
                 Console.WriteLine($"We currently have {petCount} pets that need homes. We can manage {maxPets - petCount} more.");
             }
 
+            // Loop for adding new pets
             while (anotherPet == "y" && petCount < maxPets)
             {
                 bool validEntry = false;
                 petCount++;
 
+                // Allows users to add a dog or cat
                 do
                 {
-                    Console.WriteLine("\n\rEntry 'dog' or 'cat' to begin a new entry");
+                    Console.WriteLine("\n\rEnter 'dog' or 'cat' to begin a new entry");
                     readResult = Console.ReadLine();
 
                     if (readResult != null)
@@ -145,6 +148,33 @@ do
                     }
                 } while (validEntry == false);
 
+                // Assigns an ID for the new animal
+                animalID = animalSpecies.Substring(0, 1) + (petCount + 1).ToString();
+
+                // Get the pet's age (can be ? at initial entry)
+                do
+                {
+                    int petAge;
+
+                    Console.WriteLine("Enter the pet's age or enter ? if unknown");
+                    readResult = Console.ReadLine();
+
+                    if (readResult != null)
+                    {
+                        animalAge = readResult;
+                    }
+
+                    if (animalAge != "?")
+                    {
+                        validEntry = int.TryParse(animalAge, out petAge);
+                    }
+                    else
+                    {
+                        validEntry = true;
+                    }
+                } while (validEntry == false);
+
+                // Checks to see if user would like to add more pets
                 if (petCount < maxPets)
                 {
                     Console.WriteLine("Do you want to enter info for another pet (y/n)");
@@ -160,6 +190,7 @@ do
                 }
             }
 
+            // Stops user from adding more pets if the maximum limit is reached
             if (petCount >= maxPets)
             {
                 Console.WriteLine("We have reached our limit on the number of pets that we can manage.");
