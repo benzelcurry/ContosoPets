@@ -174,6 +174,23 @@ do
                     }
                 } while (validEntry == false);
 
+                // Get a physical description of the pet
+                do
+                {
+                    Console.WriteLine("Enter a physical description of the pet (size, color, gender, weight, housebroken)");
+                    readResult = Console.ReadLine();
+
+                    if (readResult != null)
+                    {
+                        animalPhysicalDescription = readResult.ToLower();
+                    }
+
+                    if (animalPhysicalDescription == "")
+                    {
+                        animalPhysicalDescription = "tbd";
+                    }
+                } while (animalPhysicalDescription == "");
+
                 // Checks to see if user would like to add more pets
                 if (petCount < maxPets)
                 {
